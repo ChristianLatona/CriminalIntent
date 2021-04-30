@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/crime_photo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerInside"
+                android:cropToPadding="true"
+                android:background="@android:color/darker_gray"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/crime_camera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_camera"
+                android:contentDescription="@string/crime_photo_button_description" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="?android:listSeparatorTextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/crime_title_label"/>
+
+            <EditText
+                android:id="@+id/crime_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/crime_title_hint"
+                android:minHeight="48dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/crime_details_label"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/crime_date_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/date_label"
+        android:labelFor="@+id/crime_date"/>
+    <Button
+        android:id="@+id/crime_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Wed Nov 14 11:56 EST 2018" />
+
+    <TextView
+        android:id="@+id/crime_time_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/time_label"
+        android:labelFor="@+id/crime_time"/>
+    <Button
+        android:id="@+id/crime_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="11:56"/>
+
+    <CheckBox
+        android:id="@+id/crime_solved"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/crime_solved_label" />
+
+    <Button
+        android:id="@+id/crime_suspect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/crime_suspect_text"/>
+
+    <Button
+        android:id="@+id/crime_report"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/crime_report_text"/>
+
+    <Button
+        android:id="@+id/crime_call"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/crime_call_text"/>
+
+</LinearLayout>

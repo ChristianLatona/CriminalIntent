@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">CriminalIntent</string>
+    <string name="crime_title_hint">Enter a title for the crime.</string>
+    <string name="crime_title_label">Title</string>
+    <string name="crime_details_label">Details</string>
+    <string name="crime_solved_label">Solved</string>
+    <string name="list_item_crime_title_label">Crime Title</string>
+    <string name="call_police">Call Police!</string>
+    <string name="new_crime">New Crime</string>
+    <string name="crime_empty">There are no crimes yet!\nClick there to add one</string>
+    <string name="crime_call_text">Call the suspect</string>
+    <string name="crime_suspect_text">Choose Suspect</string>
+    <string name="crime_report_text">Send Crime Report</string>
+    <string name="crime_report">%1$s! The crime was discovered on %2$s. %3$s, %4$s</string>
+    <string name="crime_report_solved">The case is solved</string>
+    <string name="crime_report_unsolved">The case is not solved</string>
+    <string name="crime_report_no_suspect">There is no suspect.</string>
+    <string name="crime_report_suspect">The suspect is %s.</string>
+    <string name="crime_report_subject">CriminalIntent Crime Report</string>
+    <string name="send_report">Send crime report via</string>
+    <string name="crime_photo">Crime Photo</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="crime_photo_button_description">Take photo of crime scene</string>
+    <string name="crime_photo_no_image_description">Crime scene photo (not set)</string>
+    <string name="crime_photo_image_description">Crime scene photo (set)</string>
+    <string name="crime_solved_description">The crime is solved</string>
+    <string name="crime_not_solved_description">The crime is not solved</string>
+    <string name="date_label">Date</string>
+    <string name="time_label">Time</string>
+</resources>

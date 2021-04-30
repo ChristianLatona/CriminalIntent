@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">IntentoCriminal</string>
+    <string name="crime_title_hint">Ingrese un título para el crimen.</string>
+    <string name="crime_title_label">Título</string>
+    <string name="crime_details_label">Detalles</string>
+    <string name="crime_solved_label">Resuelto</string>
+    <string name="list_item_crime_title_label">Título del crimen</string>
+    <string name="call_police">¡Llama a la policía!</string>
+    <string name="new_crime">Nuevo crimen</string>
+    <string name="crime_empty">¡Todavía no hay delitos!\nHaga clic allí para agregar uno</string>
+    <string name="crime_call_text">Llamar al sospechoso</string>
+    <string name="crime_suspect_text">Elija sospechoso</string>
+    <string name="crime_report_text">Enviar informe de delitos</string>
+    <string name="crime_report">%1$s!El crimen fue descubierto el %2$s. %3$s, %4$s</string>
+    <string name="crime_report_solved">El caso esta resuelto</string>
+    <string name="crime_report_unsolved">El caso no esta resuelto</string>
+    <string name="crime_report_no_suspect">No hay sospechoso.</string>
+    <string name="crime_report_suspect">El sospechoso es %s.</string>
+    <string name="crime_report_subject">Informe de delito con intención criminal</string>
+    <string name="send_report">Enviar informe de delitos a través de</string>
+    <string name="crime_photo">Foto del crimen</string>
+    <string name="dismiss">Despedir</string>
+    <string name="crime_photo_button_description">Tomar foto de la escena del crimen</string>
+    <string name="crime_photo_no_image_description">Foto de la escena del crimen (no establecida)</string>
+    <string name="crime_photo_image_description">Foto de la escena del crimen (establecida)</string>
+    <string name="crime_solved_description">El crimen esta resuelto</string>
+    <string name="crime_not_solved_description">El crimen no esta resuelto</string>
+    <string name="date_label">Fecha</string>
+    <string name="time_label">Hora</string>
+</resources>
