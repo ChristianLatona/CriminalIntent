@@ -24,7 +24,7 @@ fun getScaledBitmap(path: String, activity: Activity): Bitmap? {
 fun getScaledBitmap(path: String, destWidth: Int, destHeight: Int): Bitmap? {
     // read in the dimensions of the image on disk
     var options = BitmapFactory.Options()
-    options.inJustDecodeBounds = true // ?? read the doc
+    options.inJustDecodeBounds = true // ?? read the doc, but it's self explanatory
     BitmapFactory.decodeFile(path,options)
 
     val srcWidth = options.outWidth.toFloat()

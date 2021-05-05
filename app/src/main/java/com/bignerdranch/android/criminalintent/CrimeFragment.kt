@@ -96,7 +96,7 @@ class CrimeFragment:Fragment(), DatePickerFragment.Callbacks, TimePickerFragment
         when {
             resultCode != Activity.RESULT_OK -> return
             requestCode == REQUEST_CONTACT && data != null -> {
-                val contactURI: Uri = data.data ?: return // this is ContactsContract.Contacts.CONTENT_URI, that you passed in the intent, like an extra
+                val contactURI: Uri = data.data ?: return // data set returned, which needs to be fetched by query
                 val queryFields = arrayOf(ContactsContract.Contacts.DISPLAY_NAME, ContactsContract.Contacts._ID) // specify the camps that you want from the query
 
                 val cursor =  // there will happen an SQL query
@@ -106,7 +106,7 @@ class CrimeFragment:Fragment(), DatePickerFragment.Callbacks, TimePickerFragment
                         )
 
                 var contactId: String? = null
-                cursor?.use {
+                cursor?.use { // a let that handles exceptions
                     if (it.count == 0) {
                         return
                     }
@@ -178,7 +178,7 @@ class CrimeFragment:Fragment(), DatePickerFragment.Callbacks, TimePickerFragment
 
     @SuppressLint("QueryPermissionsNeeded")
     override fun onStart() { // we re putting here the initialization of listeners and watchers, as we said previously
-        super.onStart() // WHY DO WE PUT LISTENERS ON onStart? IT WORKS PERFECTLY IN onCreateView
+        super.onStart() // WHY DO WE PUT LISTENERS ON onStart? IT WORKS PERFECTLY IN onCreateView and its a better practice
 
         val titleWatcher = object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -267,15 +267,14 @@ class CrimeFragment:Fragment(), DatePickerFragment.Callbacks, TimePickerFragment
             } // we always used this ResolveInfo to check if there is the app in the device that we need
 
             setOnClickListener{
-                captureImage.putExtra(MediaStore.EXTRA_OUTPUT, photoUri) // as i understood, you pass a photo Uri (initially empty)
-                // and then will get overwrite by the onActivityResult
-                // WRONG, COMPLETELY, this is the path of the filesystem that the camera needs to know for taking results
-                // infact the extra is called EXTRA_OUTPUT
+                captureImage.putExtra(MediaStore.EXTRA_OUTPUT, photoUri)
+                // this is the path of the filesystem that the camera needs to know for taking results
+                // infact the extra is called EXTRA_OUTPUT, you are saying the target activity there to save data
+                // it magically put the png in the photoUri path
 
-                val cameraActivities: List<ResolveInfo> = packageManager.queryIntentActivities(
-                        captureImage,
-                        PackageManager.MATCH_DEFAULT_ONLY
-                )
+                val cameraActivities: List<ResolveInfo> = packageManager.queryIntentActivities( // i think this can stay outside
+                        captureImage,PackageManager.MATCH_DEFAULT_ONLY)
+
                 for (cameraActivity in cameraActivities){
                     requireActivity().grantUriPermission(
                             cameraActivity.activityInfo.packageName,
